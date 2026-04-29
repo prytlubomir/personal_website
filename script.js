@@ -63,7 +63,7 @@ function estimateCharacterCount(element) {
 
 
 let bgTotalCharacters = estimateCharacterCount(background);
-window.onresize = background => { bgTotalCharacters = estimateCharacterCount() }
+window.onresize = background => { bgTotalCharacters = estimateCharacterCount(background) }
 
 
 setInterval(() => { background.innerText = generateBackground(bgTotalCharacters) }, 200);
