@@ -1,0 +1,57 @@
+<template>
+    <header class="header">
+        <nav class="container">
+            <ul>
+                <li><a href="" class="nav-title">Pryt Liubomyr</a></li>
+                <li><a href="" class="nav-about">About</a></li>
+                <li><a href="" class="nav-contacts">Contacts</a></li>
+            </ul>
+            <div class="lang">EN</div>
+        </nav>
+    </header>
+</template>
+
+<script>
+export default {
+    name: 'AppHeader'
+}
+</script>
+
+<style>
+.header{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 1.2em;
+    padding: 1em 0;
+    box-sizing: content-box;
+}
+
+.header nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    gap: 2em;
+}
+
+.header a{
+    text-decoration: none;
+    color: #aaaaaa;
+}
+
+.header a:hover{
+    text-decoration: underline;
+    color: #f8f8f8;
+}
+
+.header .nav-title{
+    color: #aaaaff;
+    margin-right: 2em;
+}
+</style>

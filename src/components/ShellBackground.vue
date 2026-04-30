@@ -117,20 +117,17 @@ export default {
 .background{
     position: absolute;
     z-index: -1;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #080808;
-    /*padding: 0 .6em;*/
 }
 .background div{
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 .background-texture{
     overflow: hidden;
-    /*line-height: 1ch;
-    word-spacing: 1ch;*/
     word-break: break-all;
     color: #1a1a1a;
     font-weight: bold;
