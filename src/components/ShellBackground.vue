@@ -1,6 +1,6 @@
 <template>
     <div class="background">
-        <div class="background-texture">
+        <div class="background-texture" ref="texture">
         </div>
         <div class="background-overlay"></div>
     </div>
@@ -36,12 +36,9 @@ export default {
 
     },
     mounted() {
-        console.log(this.refreshInterval);
-        let background = document.getElementsByClassName('background-texture')[0];
-        console.log(background);
+        let background = this.$refs.texture;
 
-
-
+        
         function getStyle(element, style) {
             return window.getComputedStyle(element)[style]
         }
@@ -104,7 +101,7 @@ export default {
         window.onresize = () => { bgTotalCharacters = estimateCharacterCount(background) };
 
 
-        setInterval(() => { background.innerText = generateBackground(bgTotalCharacters) }, 200);
+        setInterval(() => { background.innerText = generateBackground(bgTotalCharacters) }, this.refreshInterval);
     }
 
 }
@@ -118,13 +115,13 @@ export default {
     position: absolute;
     z-index: -1;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #080808;
 }
 .background div{
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 .background-texture{
     overflow: hidden;
@@ -133,7 +130,7 @@ export default {
     font-weight: bold;
 }
 .background-overlay{
-    bottom: 100vh;
+    bottom: 100%;
     backdrop-filter: blur(1.4px);
     background-color: rgba(40, 40, 40, .3);
 }
