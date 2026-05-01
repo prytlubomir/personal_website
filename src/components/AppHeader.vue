@@ -19,8 +19,8 @@ export default {
 
 <style>
 .header{
-    position: absolute;
-    z-index: 1;
+    position: fixed;
+    z-index: 4;
     width: 100%;
     height: 1.2em;
     padding: 1em 0;

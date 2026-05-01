@@ -23,6 +23,8 @@ section{
 }
 
 .title{
+    position: relative;
+    z-index: 2;
     height: 100vh;
 }
 

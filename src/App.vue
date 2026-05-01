@@ -1,8 +1,8 @@
 <template>
     <AppHeader />
+    <div class="header-background"></div>
     <main>
         <TitleScreen />
-        <AppHeader />
         <HomeAboutSection />
     </main>
 </template>
@@ -17,7 +17,7 @@ export default {
     components: {
         AppHeader,
         TitleScreen,
-        HomeAboutSection
+        HomeAboutSection,
     }
 }
 </script>
@@ -39,9 +39,12 @@ body {
     padding: 0 7em;
 }
 
-main .header {
-    position: sticky;
-    top: 0;
+.header-background {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 3.2em;
+    background-color: black;
 }
 
 /*
