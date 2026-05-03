@@ -2,17 +2,23 @@
     <section class="title">
         <div class="container">
             <h1>Hi, I'm Pryt Liubomyr</h1>
+            <div class="buttons">
+                <LinkButton href="#">Hello!</LinkButton>
+                <LinkButton href="#">Hi!</LinkButton>
+            </div>
         </div>
         <ShellBackground />
     </section>
 </template>
 <script>
+import LinkButton from './LinkButton.vue';
 import ShellBackground from './ShellBackground.vue';
 
 export default {
     name: 'TitleScreen',
     components: {
-        ShellBackground
+        ShellBackground,
+        LinkButton
     }
 }
 </script>
@@ -30,10 +36,28 @@ section{
 
 .title .container{
     position: absolute;
-    padding-top: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 5em;
+    /*padding-top: 10em;*/
 }
 
 .title h1{
+    font-size: 2.8rem;
     text-align: center;
+    margin: 0;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+    gap: 5em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.link-button{
+    flex-basis: 15em;
 }
 </style>
