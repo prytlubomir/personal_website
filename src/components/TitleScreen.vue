@@ -2,9 +2,13 @@
     <section class="title">
         <div class="container">
             <h1>Hi, I'm Pryt Liubomyr</h1>
+            <div class="intro">
+             <p>I'm a programmer, passionate about developing usefull software!</p>
+             <p class="calling"><span>Look at my projects</span> <span>or</span> <span>hire me!</span></p>
+            </div>
             <div class="buttons">
-                <LinkButton href="#">CV</LinkButton>
                 <LinkButton href="#">GitHub</LinkButton>
+                <LinkButton href="#">CV</LinkButton>
             </div>
         </div>
         <ShellBackground />
@@ -40,14 +44,26 @@ section{
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    gap: 5em;
+    /*gap: 5em;*/
     /*padding-top: 10em;*/
+}
+
+.intro{
+    font-size: 1.3rem;
+    text-align: center;
+    color: #b0b0b0;
+    margin-bottom: 2.5em;
+}
+
+.intro .calling{
+    /*display: flex;*/
+    /*text-align: left;*/
 }
 
 .title h1{
     font-size: 2.8rem;
     text-align: center;
-    margin: 0;
+    margin: 0 0 .1em 0;
 }
 
 .buttons{
