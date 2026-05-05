@@ -3,8 +3,8 @@
         <div class="container">
             <h1>Hi, I'm Pryt Liubomyr</h1>
             <div class="buttons">
-                <LinkButton href="#">Hello!</LinkButton>
-                <LinkButton href="#">Hi!</LinkButton>
+                <LinkButton href="#">CV</LinkButton>
+                <LinkButton href="#">GitHub</LinkButton>
             </div>
         </div>
         <ShellBackground />
