@@ -69,7 +69,7 @@ section{
 .buttons{
     display: flex;
     width: 100%;
-    gap: 5em;
+    gap: 1em 5em;
     justify-content: center;
     flex-wrap: wrap;
 }

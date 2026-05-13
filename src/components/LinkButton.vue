@@ -24,7 +24,7 @@ export default {
     color: black;
 }
 .link-button:active{
-    background: #aaaaff;
+    background: white;
     box-shadow: none;
 }
 
