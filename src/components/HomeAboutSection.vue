@@ -1,5 +1,6 @@
 <template>
-    <section class="about container">
+    <section class="about">
+    <div class="container">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         Quisquam consectetur sapiente rerum, itaque et mollitia corrupti
         sed aperiam. Neque odio beatae obcaecati corporis eaque quisquam
@@ -187,6 +188,7 @@
         debitis quia, perferendis vitae a, repudiandae illum enim quasi
         architecto inventore asperiores numquam quam nisi cumque. Ipsam
         architecto dolorem, sapiente consequatur ab iure nulla!
+    </div>
     </section>
 </template>
 
@@ -195,4 +197,17 @@ export default {
     name: "HomeAboutSection"
 }
 </script>
-<style></style>
+<style>
+
+.about{
+    padding: 5em 0;
+    background-color: #1a1a1a;
+    color: #afafaf;
+    line-height: 1.7em;
+    font-size: 1.2em;
+    word-spacing: .2em;
+    
+    /*box-shadow: inset -10px 10px 20px #3f3f3f;*/
+}
+
+</style>
