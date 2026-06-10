@@ -3,7 +3,7 @@
         <nav class="container">
             <ul>
                 <li><a href="" class="nav-title"><img src="/logov5.svg" alt="Pryt Liubomyr"></a></li>
-                <li><a href="" class="nav-about">About</a></li>
+                <li><a href="#about" class="nav-about">About</a></li>
                 <li><a href="" class="nav-contacts">Contacts</a></li>
             </ul>
             <div class="lang">EN</div>

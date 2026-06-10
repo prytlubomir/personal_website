@@ -26,7 +26,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 section{
     display: block;
     min-height: 100vh;
