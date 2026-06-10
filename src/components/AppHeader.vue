@@ -2,7 +2,7 @@
     <header class="header">
         <nav class="container">
             <ul>
-                <li><a href="" class="nav-title">Pryt Liubomyr</a></li>
+                <li><a href="" class="nav-title"><img src="/logov5.svg" alt="Pryt Liubomyr"></a></li>
                 <li><a href="" class="nav-about">About</a></li>
                 <li><a href="" class="nav-contacts">Contacts</a></li>
             </ul>
@@ -15,6 +15,7 @@
 export default {
     name: 'AppHeader'
 }
+
 </script>
 
 <style>
@@ -53,5 +54,9 @@ export default {
 .header .nav-title{
     color: #aaaaff;
     margin-right: 2em;
+}
+
+.header .nav-title img{
+    height: 1.2em;
 }
 </style>
