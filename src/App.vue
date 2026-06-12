@@ -27,6 +27,13 @@ export default {
     box-sizing: border-box;
 }
 
+::selection{
+    color: white;
+    background-color: #87a9ff;
+
+    text-shadow: black 1px 1px 10px;
+}
+
 body {
     margin: 0;
     padding: 0;
