@@ -196,11 +196,11 @@
         command-line utilities.</p> 
         <p>I learn quickly, work independently, and enjoy solving practical problems
         by building reliable software.</p>
-        <p>I also have experience assisting with teaching a programming
+        <p>I have experience assisting with teaching a programming
         class, which strengthened my communication skills and ability to explain technical ideas clearly.</p>
         <p>I am particularly interested in building useful tools and continuing to develop as part of a collaborative team.</p>
         <h4>Languages</h4>
-        <p>I'm fluent at multiple languages, and have a rough understanding of a few more.</p>
+        <p>I'm fluent at multiple languages, and roughly understand a few more.</p>
         <ul>
             <li>
                 <span class="about-lang">English</span>
