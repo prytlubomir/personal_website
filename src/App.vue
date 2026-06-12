@@ -31,7 +31,7 @@
     color: white;
     background-color: #87a9ff;
 
-    text-shadow: black 1px 1px 10px;
+    text-shadow: #888 1px 1px 10px;
 }
 
 body {
