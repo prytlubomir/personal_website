@@ -8,18 +8,18 @@
 </template>
 
 <script>
-import AppHeader from './components/AppHeader.vue';
-import TitleScreen from './components/TitleScreen.vue';
-import HomeAboutSection from './components/HomeAboutSection.vue';
-
-export default {
-    name: 'App',
-    components: {
-        AppHeader,
-        TitleScreen,
-        HomeAboutSection,
+    import AppHeader from './components/AppHeader.vue';
+    import TitleScreen from './components/TitleScreen.vue';
+    import HomeAboutSection from './components/HomeAboutSection.vue';
+    
+    export default {
+        name: 'App',
+        components: {
+            AppHeader,
+            TitleScreen,
+            HomeAboutSection,
+        }
     }
-}
 </script>
 
 <style>
