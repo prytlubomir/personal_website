@@ -41,11 +41,6 @@ body {
     color: #f8f8f8;
 }
 
-.container {
-    width: 100%;
-    padding: 0 7em;
-}
-
 .header-background {
     position: fixed;
     z-index: 1;

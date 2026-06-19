@@ -1,6 +1,6 @@
 <template>
     <section class="title">
-        <div class="container">
+        <ContentLimiter>
             <h1>Hi, I'm Pryt Liubomyr</h1>
             <div class="intro">
              <p>I'm a programmer, passionate about developing usefull software!</p>
@@ -10,11 +10,12 @@
                 <LinkButton href="#">GitHub</LinkButton>
                 <LinkButton href="#">CV</LinkButton>
             </div>
-        </div>
+        </ContentLimiter>
         <ShellBackground />
     </section>
 </template>
 <script>
+import ContentLimiter from './ContentLimiter.vue';
 import LinkButton from './LinkButton.vue';
 import ShellBackground from './ShellBackground.vue';
 
@@ -22,7 +23,8 @@ export default {
     name: 'TitleScreen',
     components: {
         ShellBackground,
-        LinkButton
+        LinkButton,
+        ContentLimiter
     }
 }
 </script>

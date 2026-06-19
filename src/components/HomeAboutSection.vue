@@ -1,5 +1,5 @@
 <template>
-    <section class="about" id="about">
+<section class="about" id="about">
     <!-- <div class="container">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         Quisquam consectetur sapiente rerum, itaque et mollitia corrupti
@@ -189,16 +189,17 @@
         architecto inventore asperiores numquam quam nisi cumque. Ipsam
         architecto dolorem, sapiente consequatur ab iure nulla!
     </div> -->
-    <div class="container">
+    <ContentLimiter>
         <h2>About me</h2>
         <hr>
         <p>I'm a Python-focused developer with 7 years of experience building desktop tools, web projects, and
-        command-line utilities.</p> 
+            command-line utilities.</p>
         <p>I learn quickly, work independently, and enjoy solving practical problems
-        by building reliable software.</p>
+            by building reliable software.</p>
         <p>I have experience assisting with teaching a programming
-        class, which strengthened my communication skills and ability to explain technical ideas clearly.</p>
-        <p>I am particularly interested in building useful tools and continuing to develop as part of a collaborative team.</p>
+            class, which strengthened my communication skills and ability to explain technical ideas clearly.</p>
+        <p>I am particularly interested in building useful tools and continuing to develop as part of a collaborative
+            team.</p>
         <h4>Languages</h4>
         <p>I'm fluent at multiple languages, and roughly understand a few more.</p>
         <ul>
@@ -218,47 +219,55 @@
                 <span class="about-lang-level">rough understanging</span>
             </li>
         </ul>
-    </div>
-    </section>
+    </ContentLimiter>
+</section>
 </template>
 
 <script>
+import ContentLimiter from './ContentLimiter.vue';
 export default {
-    name: "HomeAboutSection"
+    name: "HomeAboutSection",
+    components: {
+        ContentLimiter
+    }
 }
 </script>
 <style>
-
-.about{
+.about {
     padding: 1.2rem 0;
     background-color: #1a1a1a;
     color: #afafaf;
     /*line-height: 1.7em;*/
     font-size: 1.2em;
     word-spacing: .2em;
-    
+
     /*box-shadow: inset -10px 10px 20px #3f3f3f;*/
 }
-p{
+
+p {
     /*margin: 0;*/
 }
-p:last-child{
+
+p:last-child {
     /*margin-bottom: 0;*/
 }
-h2{
+
+h2 {
     margin: 0;
     text-align: center;
 }
-hr{
+
+hr {
     margin: 1.2rem auto;
     width: 75%;
-    
-}
-ul{
-    padding-left: 20px;
-}
-.about-lang{
-    font-weight: bold;
+
 }
 
+ul {
+    padding-left: 20px;
+}
+
+.about-lang {
+    font-weight: bold;
+}
 </style>
