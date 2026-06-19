@@ -3,8 +3,8 @@
         <ContentLimiter>
             <h1>Hi, I'm Pryt Liubomyr</h1>
             <div class="intro">
-             <p>I'm a programmer, passionate about developing usefull software!</p>
-             <p class="calling"><span>Look at my projects</span> <span>or</span> <span>hire me!</span></p>
+                <p>I'm a programmer, passionate about developing usefull software!</p>
+                <p class="calling"><span>Look at my projects</span> <span>or</span> <span>hire me!</span></p>
             </div>
             <div class="buttons">
                 <LinkButton href="#">GitHub</LinkButton>
@@ -15,67 +15,68 @@
     </section>
 </template>
 <script>
-import ContentLimiter from './ContentLimiter.vue';
-import LinkButton from './LinkButton.vue';
-import ShellBackground from './ShellBackground.vue';
+    import ContentLimiter from './ContentLimiter.vue';
+    import LinkButton from './LinkButton.vue';
+    import ShellBackground from './ShellBackground.vue';
 
-export default {
-    name: 'TitleScreen',
-    components: {
-        ShellBackground,
-        LinkButton,
-        ContentLimiter
+    export default {
+        name: 'TitleScreen',
+        components: {
+            ShellBackground,
+            LinkButton,
+            ContentLimiter
+        }
     }
-}
 </script>
 <style scoped>
-section{
-    display: block;
-    min-height: 100vh;
-}
+    section {
+        display: block;
+        min-height: 100vh;
+    }
 
-.title{
-    position: relative;
-    z-index: 2;
-    height: 100vh;
-}
+    .title {
+        position: relative;
+        z-index: 2;
+        height: 100vh;
+    }
 
-.title .container{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    /*gap: 5em;*/
-    /*padding-top: 10em;*/
-}
+    .title .container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        /*gap: 5em;*/
+        /*padding-top: 10em;*/
+    }
 
-.intro{
-    font-size: 1.3rem;
-    text-align: center;
-    color: #b0b0b0;
-    margin-bottom: 2.5em;
-}
+    .intro {
+        font-size: 1.3rem;
+        text-align: center;
+        color: #b0b0b0;
+        margin-bottom: 2.5em;
+    }
 
-.intro .calling{
-    /*display: flex;*/
-    /*text-align: left;*/
-}
+    .intro .calling {
+        /*display: flex;*/
+        /*text-align: left;*/
+    }
 
-.title h1{
-    font-size: 2.8rem;
-    text-align: center;
-    margin: 0 0 .1em 0;
-}
+    .title h1 {
+        font-size: 2.8rem;
+        text-align: center;
+        margin: 0 0 .1em 0;
+    }
 
-.buttons{
-    display: flex;
-    width: 100%;
-    gap: 1em 5em;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.link-button{
-    flex-basis: 15em;
-}
+    .buttons {
+        display: flex;
+        width: 100%;
+        gap: 1em 5em;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .link-button {
+        flex-basis: 15em;
+    }
 </style>

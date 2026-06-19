@@ -1,6 +1,6 @@
 <template>
-<section class="about" id="about">
-    <!-- <div class="container">
+    <section class="about" id="about">
+        <!-- <div class="container">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         Quisquam consectetur sapiente rerum, itaque et mollitia corrupti
         sed aperiam. Neque odio beatae obcaecati corporis eaque quisquam
@@ -189,85 +189,86 @@
         architecto inventore asperiores numquam quam nisi cumque. Ipsam
         architecto dolorem, sapiente consequatur ab iure nulla!
     </div> -->
-    <ContentLimiter>
-        <h2>About me</h2>
-        <hr>
-        <p>I'm a Python-focused developer with 7 years of experience building desktop tools, web projects, and
-            command-line utilities.</p>
-        <p>I learn quickly, work independently, and enjoy solving practical problems
-            by building reliable software.</p>
-        <p>I have experience assisting with teaching a programming
-            class, which strengthened my communication skills and ability to explain technical ideas clearly.</p>
-        <p>I am particularly interested in building useful tools and continuing to develop as part of a collaborative
-            team.</p>
-        <h4>Languages</h4>
-        <p>I'm fluent at multiple languages, and roughly understand a few more.</p>
-        <ul>
-            <li>
-                <span class="about-lang">English</span>
-                <span class="about-lang-sep"> - </span>
-                <span class="about-lang-level">fluent</span>
-            </li>
-            <li>
-                <span class="about-lang">Ukrainian</span>
-                <span class="about-lang-sep"> - </span>
-                <span class="about-lang-level">native</span>
-            </li>
-            <li>
-                <span class="about-lang">Slavic language group</span>
-                <span class="about-lang-sep"> - </span>
-                <span class="about-lang-level">rough understanging</span>
-            </li>
-        </ul>
-    </ContentLimiter>
-</section>
+        <ContentLimiter>
+            <h2>About me</h2>
+            <hr>
+            <p>I'm a Python-focused developer with 7 years of experience building desktop tools, web projects, and
+                command-line utilities.</p>
+            <p>I learn quickly, work independently, and enjoy solving practical problems
+                by building reliable software.</p>
+            <p>I have experience assisting with teaching a programming
+                class, which strengthened my communication skills and ability to explain technical ideas clearly.</p>
+            <p>I am particularly interested in building useful tools and continuing to develop as part of a
+                collaborative
+                team.</p>
+            <h4>Languages</h4>
+            <p>I'm fluent at multiple languages, and roughly understand a few more.</p>
+            <ul>
+                <li>
+                    <span class="about-lang">English</span>
+                    <span class="about-lang-sep"> - </span>
+                    <span class="about-lang-level">fluent</span>
+                </li>
+                <li>
+                    <span class="about-lang">Ukrainian</span>
+                    <span class="about-lang-sep"> - </span>
+                    <span class="about-lang-level">native</span>
+                </li>
+                <li>
+                    <span class="about-lang">Slavic language group</span>
+                    <span class="about-lang-sep"> - </span>
+                    <span class="about-lang-level">rough understanging</span>
+                </li>
+            </ul>
+        </ContentLimiter>
+    </section>
 </template>
 
 <script>
-import ContentLimiter from './ContentLimiter.vue';
-export default {
-    name: "HomeAboutSection",
-    components: {
-        ContentLimiter
+    import ContentLimiter from './ContentLimiter.vue';
+    export default {
+        name: "HomeAboutSection",
+        components: {
+            ContentLimiter
+        }
     }
-}
 </script>
 <style>
-.about {
-    padding: 1.2rem 0;
-    background-color: #1a1a1a;
-    color: #afafaf;
-    /*line-height: 1.7em;*/
-    font-size: 1.2em;
-    word-spacing: .2em;
+    .about {
+        padding: 1.2rem 0;
+        background-color: #1a1a1a;
+        color: #afafaf;
+        /*line-height: 1.7em;*/
+        font-size: 1.2em;
+        word-spacing: .2em;
 
-    /*box-shadow: inset -10px 10px 20px #3f3f3f;*/
-}
+        /*box-shadow: inset -10px 10px 20px #3f3f3f;*/
+    }
 
-p {
-    /*margin: 0;*/
-}
+    p {
+        /*margin: 0;*/
+    }
 
-p:last-child {
-    /*margin-bottom: 0;*/
-}
+    p:last-child {
+        /*margin-bottom: 0;*/
+    }
 
-h2 {
-    margin: 0;
-    text-align: center;
-}
+    h2 {
+        margin: 0;
+        text-align: center;
+    }
 
-hr {
-    margin: 1.2rem auto;
-    width: 75%;
+    hr {
+        margin: 1.2rem auto;
+        width: 75%;
 
-}
+    }
 
-ul {
-    padding-left: 20px;
-}
+    ul {
+        padding-left: 20px;
+    }
 
-.about-lang {
-    font-weight: bold;
-}
+    .about-lang {
+        font-weight: bold;
+    }
 </style>
