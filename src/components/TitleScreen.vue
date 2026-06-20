@@ -1,6 +1,6 @@
 <template>
     <section class="title">
-        <ContentLimiter>
+        <ContentLimiter class="container">
             <h1>Hi, I'm Pryt Liubomyr</h1>
             <div class="intro">
                 <p>I'm a programmer, passionate about developing usefull software!</p>
@@ -29,25 +29,21 @@
     }
 </script>
 <style scoped>
-    section {
-        display: block;
-        min-height: 100vh;
-    }
 
     .title {
+        display: block;
         position: relative;
         z-index: 2;
+        min-height: 100vh;
         height: 100vh;
     }
 
-    .title .container {
+    .container {
         position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 100%;
-        /*gap: 5em;*/
-        /*padding-top: 10em;*/
     }
 
     .intro {
@@ -55,11 +51,6 @@
         text-align: center;
         color: #b0b0b0;
         margin-bottom: 2.5em;
-    }
-
-    .intro .calling {
-        /*display: flex;*/
-        /*text-align: left;*/
     }
 
     .title h1 {
