@@ -1,9 +1,10 @@
 <template>
     <AppHeader />
     <div class="header-background"></div>
-    <main>
+    <main ref="main">
         <TitleScreen />
         <HomeAboutSection />
+        <ContactSecion/>
     </main>
 </template>
 
@@ -11,6 +12,7 @@
     import AppHeader from './components/AppHeader.vue';
     import TitleScreen from './components/TitleScreen.vue';
     import HomeAboutSection from './components/HomeAboutSection.vue';
+    import ContactSecion from './components/ContactSecion.vue';
 
     export default {
         name: 'App',
@@ -18,6 +20,13 @@
             AppHeader,
             TitleScreen,
             HomeAboutSection,
+            ContactSecion
+        },
+        computed: {
+            // this.$refs.main.
+        },
+        mounted() {
+            console.log(this.$refs.main)
         }
     }
 </script>
@@ -48,15 +57,4 @@
         height: 3.2em;
         background-color: black;
     }
-
-    /*
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-*/
 </style>
