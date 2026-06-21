@@ -1,6 +1,5 @@
 <template>
     <AppHeader />
-    <div class="header-background"></div>
     <main ref="main">
         <TitleScreen />
         <HomeAboutSection />
@@ -22,12 +21,6 @@
             HomeAboutSection,
             ContactSecion
         },
-        computed: {
-            // this.$refs.main.
-        },
-        mounted() {
-            console.log(this.$refs.main)
-        }
     }
 </script>
 
@@ -48,13 +41,5 @@
         padding: 0;
         background-color: rgba(20, 20, 20, 1);
         color: #f8f8f8;
-    }
-
-    .header-background {
-        position: fixed;
-        z-index: 1;
-        width: 100%;
-        height: 3.2em;
-        background-color: black;
     }
 </style>

@@ -1,5 +1,6 @@
 <template>
-    <header class="header">
+    <header class="header" ref="header">
+        <div class="header-background" ref="headerBackground"></div>
         <ContentLimiter>
             <nav>
                 <ul>
@@ -20,7 +21,27 @@
         name: 'AppHeader',
         components: {
             ContentLimiter
-        }
+        },
+        mounted() {
+            const header = this.$refs.header;
+            const headerBackground = this.$refs.headerBackground;
+            const headerHeight = header.offsetHeight;
+            
+            window.addEventListener('scroll', () => {
+                let wHeight = window.innerHeight;
+                let hPos = window.scrollY;
+
+                let splitHeight = wHeight - headerHeight;
+
+                if (hPos > splitHeight && !headerBackground.classList.contains('show')) {
+                    console.log('added');
+                    headerBackground.classList.add('show');
+                } else if (hPos < splitHeight && headerBackground.classList.contains('show')) {
+                    console.log('removed');
+                    headerBackground.classList.remove('show');
+                }
+            });
+        },
     }
 
 </script>
@@ -66,4 +87,21 @@
     .header .nav-title img {
         height: 1.2em;
     }
+
+    .header-background {
+        --hb-height: 3.2em;
+        --hb-ani-duration: .1s;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: var(--hb-height);
+        top: calc(var(--hb-height) * -1);
+        background-color: black;
+        transition: var(--hb-ani-duration) top;
+    }
+
+    .header-background.show {
+        top: 0;
+    }
+    
 </style>
