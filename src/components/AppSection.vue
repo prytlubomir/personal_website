@@ -10,7 +10,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 
     .section {
         padding: 1.2rem 0;

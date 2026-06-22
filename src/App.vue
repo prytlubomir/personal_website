@@ -42,4 +42,9 @@
         background-color: rgba(20, 20, 20, 1);
         color: #f8f8f8;
     }
+
+    .section:nth-child(2n+3) {
+        background-color: #0a0a0a !important;
+    }
+    
 </style>
