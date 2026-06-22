@@ -28,15 +28,13 @@
             const headerHeight = header.offsetHeight;
             
             window.addEventListener('scroll', () => {
-                let wHeight = window.innerHeight;
                 let hPos = window.scrollY;
 
-                let splitHeight = wHeight - headerHeight;
 
-                if (hPos > splitHeight && !headerBackground.classList.contains('show')) {
+                if (hPos > headerHeight && !headerBackground.classList.contains('show')) {
                     console.log('added');
                     headerBackground.classList.add('show');
-                } else if (hPos < splitHeight && headerBackground.classList.contains('show')) {
+                } else if (hPos < headerHeight && headerBackground.classList.contains('show')) {
                     console.log('removed');
                     headerBackground.classList.remove('show');
                 }
