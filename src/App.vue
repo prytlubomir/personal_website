@@ -3,7 +3,7 @@
     <main ref="main">
         <TitleScreen />
         <HomeAboutSection />
-        <ContactSecion/>
+        <ContactSection/>
     </main>
 </template>
 
@@ -11,7 +11,7 @@
     import AppHeader from './components/AppHeader.vue';
     import TitleScreen from './components/TitleScreen.vue';
     import HomeAboutSection from './components/HomeAboutSection.vue';
-    import ContactSecion from './components/ContactSecion.vue';
+    import ContactSection from './components/ContactSecion.vue';
 
     export default {
         name: 'App',
@@ -19,7 +19,7 @@
             AppHeader,
             TitleScreen,
             HomeAboutSection,
-            ContactSecion
+            ContactSection
         },
     }
 </script>

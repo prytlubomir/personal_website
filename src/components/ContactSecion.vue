@@ -22,7 +22,7 @@
     import SectionHeading from './SectionHeading.vue';
 
     export default {
-        name: "ContactSecion",
+        name: "ContactSection",
         components: {
             AppSection,
             SectionHeading,
