@@ -3,7 +3,8 @@
     <main ref="main">
         <TitleScreen />
         <HomeAboutSection />
-        <ContactSection/>
+        <ProjectsSection />
+        <ContactSection />
     </main>
 </template>
 
@@ -12,6 +13,7 @@
     import TitleScreen from './components/TitleScreen.vue';
     import HomeAboutSection from './components/HomeAboutSection.vue';
     import ContactSection from './components/ContactSecion.vue';
+    import ProjectsSection from './components/ProjectsSection.vue';
 
     export default {
         name: 'App',
@@ -19,7 +21,8 @@
             AppHeader,
             TitleScreen,
             HomeAboutSection,
-            ContactSection
+            ContactSection,
+            ProjectsSection
         },
     }
 </script>
@@ -46,5 +49,5 @@
     .section:nth-child(2n+3) {
         background-color: #0a0a0a !important;
     }
-    
+
 </style>
