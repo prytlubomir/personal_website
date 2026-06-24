@@ -1,6 +1,4 @@
 let background = document.getElementById('background-texture');
-let header = document.getElementById('header');
-let headerPlaceholder = document.getElementById('header-placeholder');
 
 function selectRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)]
@@ -29,5 +27,3 @@ function generateBackground(lenght) {
 }
 
 setInterval(() => { background.innerText = generateBackground(3000) }, 200);
-
-headerPlaceholder.innerHTML = header.innerHTML;
