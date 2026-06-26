@@ -81,7 +81,7 @@ body {
 
 #background-overlay {
     bottom: 100vh;
-    backdrop-filter: blur(1.8px);
+    backdrop-filter: blur(1.4px);
     background-color: rgba(40, 40, 40, .3);
 }
 
