@@ -18,7 +18,7 @@
         text-decoration: none;
         text-align: center;
         border-radius: 20em;
-        box-shadow: 0px 0px 1000px #303030;
+        /*box-shadow: 0px 0px 1000px #303030;*/
         transition: color var(--hover-ani-duration), background var(--hover-ani-duration);
     }
 

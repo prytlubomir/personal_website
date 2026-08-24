@@ -67,7 +67,19 @@
         flex-wrap: wrap;
     }
 
-    .buttons > *{
+    .buttons > * {
         flex-basis: 15em;
+    }
+
+    .buttons > *::before {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        inset: -500px;
+        background: radial-gradient(
+            ellipse 400px 300px at center,
+            #aaaaaa -4000%,
+            transparent 100%
+        );
     }
 </style>
