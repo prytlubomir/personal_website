@@ -7,7 +7,7 @@
                     My website made with Vue.js v3.
                     You're using it right now.
                 </ProjectCard>
-                <ProjectCard src='/icon.svg' projectName="Crop Studio" imgType="icon">
+                <ProjectCard src='/icon.svg' projectName="Crop Studio" imgType="icon" href="https://github.com">
                     A convenient batch-cropping tool for images.
                 </ProjectCard>
                 <ProjectCard src='/poster.png' projectName="Lorem ipsum">

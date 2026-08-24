@@ -11,8 +11,8 @@
                     <slot></slot>
                 </p>
             </div>
-            <div class="card-button">
-                <a href="#"><span class="call-for-action">Find out more</span> <span class="arrow">&rarr;</span> </a>
+            <div class="card-link" ref="link">
+                <a :href="href"><span class="call-for-action">{{ linkText }}</span> <span class="arrow">&rarr;</span> </a>
             </div>
         </div>
         <div class="expander"></div>
@@ -52,11 +52,11 @@
         transition: all var(--resize-duration-reverse);
     }
     
-    .project-card .card-content > :nth-child(odd){
+    .card-content > :nth-child(odd){
         background-color: var(--darker-background);
     }
 
-    .project-card .card-content:hover {
+    .card-content:hover {
         position: absolute;
         width: calc(100% + calc(var(--expand-value) * 2));
         height: calc(100% + calc(var(--expand-value) * 2));
@@ -108,7 +108,7 @@
         padding-top: 0.5rem;
     }
 
-    .card-button{
+    .card-link{
         position: relative;
         top: 0;
         height: 3rem;
@@ -117,7 +117,11 @@
         background: #000;
     }
 
-    .card-button a{
+    .unset {
+        display: none;
+    }
+
+    .card-link a{
         position: relative;
         box-sizing: border-box;
         display: flex;
@@ -128,11 +132,11 @@
         text-decoration: none;
     }
 
-    .card-button a:hover {
+    .card-link a:hover {
         color: white;
     }
     
-    .card-button a::after{
+    .card-link a::after{
         content: '';
         position: absolute;
         left: 0;
@@ -142,7 +146,7 @@
         width: inherit;
     }
 
-    .card-button a:hover::after{
+    .card-link a:hover::after{
         background-color: currentColor;
     }
 
@@ -160,11 +164,22 @@
                 type: String,
                 required: false,
                 default: "image"
+            },
+            linkText: {
+                type: String,
+                required: false,
+                default: "Find out more"
+            },
+            href: {
+                type: String,
+                required: false,
+                default: ""
             }
         },
         mounted() {
             let image = this.$refs.img;
-            console.log(this.imgType);
+            let link  = this.$refs.link;
+
             switch (this.imgType) {
                 case "icon":
                     image.classList.add('icon');
@@ -172,6 +187,10 @@
                 case "image":
                     image.classList.add('image');
                     break
+            }
+
+            if (!this.href) {
+                link.classList.add('unset');
             }
         }
     }
