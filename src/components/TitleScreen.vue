@@ -67,7 +67,7 @@
         flex-wrap: wrap;
     }
 
-    .link-button {
+    .buttons > *{
         flex-basis: 15em;
     }
 </style>
