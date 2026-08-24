@@ -7,8 +7,8 @@
                 <p class="calling"><span>Look at my projects</span> <span>or</span> <span>hire me!</span></p>
             </div>
             <div class="buttons">
-                <LinkButton href="#">GitHub</LinkButton>
-                <LinkButton href="#">CV</LinkButton>
+                <LinkButton class="button" href="#">GitHub</LinkButton>
+                <LinkButton class="button" href="#">CV</LinkButton>
             </div>
         </ContentLimiter>
         <ShellBackground />
@@ -67,11 +67,11 @@
         flex-wrap: wrap;
     }
 
-    .buttons > * {
+    .button {
         flex-basis: 15em;
     }
 
-    .buttons > *::before {
+    .button::before {
         content: "";
         position: absolute;
         pointer-events: none;
