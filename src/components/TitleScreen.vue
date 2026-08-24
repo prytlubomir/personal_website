@@ -36,6 +36,7 @@
         z-index: 2;
         min-height: 100vh;
         height: 100vh;
+        overflow: hidden;
     }
 
     .container {
