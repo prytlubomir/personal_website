@@ -122,11 +122,14 @@
         box-sizing: border-box;
         display: flex;
         width: 100%;
-        color: var(--color);
+        color: #ddd;
         text-align: center;
         justify-content: space-between;
         text-decoration: none;
-        /*text-decoration-skip-ink: none;*/
+    }
+
+    .card-button a:hover {
+        color: white;
     }
     
     .card-button a::after{
