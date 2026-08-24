@@ -49,7 +49,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
     .about {
         padding: 1.2rem 0;
         background-color: #1a1a1a;
