@@ -45,12 +45,22 @@
 </script>
 
 <style>
+
+:root {
+    --header-height: 1.2em;
+    --header-padding: 1em;
+    --header-occupied-space: calc(var(--header-height) + var(--header-padding) * 2)
+}
+
+</style>
+
+<style scoped>
     .header {
         position: fixed;
         z-index: 4;
         width: 100%;
-        height: 1.2em;
-        padding: 1em 0;
+        height: var(--header-height);
+        padding: var(--header-padding) 0;
         box-sizing: content-box;
     }
 
@@ -83,17 +93,16 @@
     }
 
     .header .nav-title img {
-        height: 1.2em;
+        height: var(--header-height);
     }
 
     .header-background {
-        --hb-height: 3.2em;
         --hb-ani-duration: .1s;
         position: absolute;
         z-index: -1;
         width: 100%;
-        height: var(--hb-height);
-        top: calc(var(--hb-height) * -1);
+        height: var(--header-occupied-space);
+        top: calc(var(--header-occupied-space) * -1);
         background-color: black;
         transition: var(--hb-ani-duration) top;
     }

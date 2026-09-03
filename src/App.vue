@@ -32,6 +32,10 @@
         box-sizing: border-box;
     }
 
+    html {
+        scroll-padding-top: var(--header-occupied-space);
+    }
+
     ::selection {
         color: white;
         background-color: #87a9ff;
