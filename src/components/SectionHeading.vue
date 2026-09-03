@@ -18,12 +18,12 @@
     h2 {
         margin: 0;
         text-align: center;
+        font-weight: normal;
     }
 
     hr {
-        margin: 1.2rem auto;
+        margin: 1.2rem auto 2rem auto;
         width: 75%;
-
     }
 
 </style>
