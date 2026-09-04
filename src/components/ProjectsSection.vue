@@ -68,7 +68,6 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </ProjectCard>
             </div>
-            <div style="width: 1ex; height: 1ex; background: red;"></div>
         </ContentLimiter>
     </AppSection>
 </template>
