@@ -7,8 +7,6 @@
 </template>
 
 <script>
-    // import { useTemplateRef } from 'vue';
-
     export default {
         name: 'ShellBackground',
         components: {},
@@ -36,6 +34,7 @@
 
         },
         mounted() {
+           
             let background = this.$refs.texture;
 
 
@@ -63,26 +62,23 @@
             }
 
 
-            function generateBackground(lenght) {
-                let charList = Array.from('!@#$%?&~*.,/\\/!@#$%?&~*.,/\\/-<>=+')
-                    .concat(['null', 'home', 'dev', 'bin', 'etc', 'sh', 'bin', 'ls', 'dir', 'rm', '-r', '-f', '-a', '-c', '-f']);
-                let p = Array.from(charList);
+            function generateBackground(charCount, charList) {
+                let charPool = Array.from(charList);
                 let result = '';
                 let char = '';
 
-                for (let i = 0; i < lenght; i++) {
-                    if (p.length > 0) {
-                        char = selectRandom(p);
+                for (let i = 0; i < charCount; i++) {
+                    if (charPool.length > 0) {
+                        char = selectRandom(charPool);
                         result += char + ' ';
-                        let ind = p.indexOf(char);
-                        p.splice(ind, 1);
+                        let ind = charPool.indexOf(char);
+                        charPool.splice(ind, 1);
                     } else {
-                        p = Array.from(charList);
+                        charPool = Array.from(charList);
                     }
                 }
                 return result;
             }
-
 
             function estimateCharacterCount(element) {
                 let bgw = parseFloat(getStyle(element, 'width'));
@@ -96,17 +92,13 @@
                 return total;
             }
 
-
-            let bgTotalCharacters = estimateCharacterCount(background);
-            window.onresize = () => { bgTotalCharacters = estimateCharacterCount(background) };
-
-
-            setInterval(() => { background.innerText = generateBackground(bgTotalCharacters) }, this.refreshInterval);
+            setInterval(() => {
+                let charCount = estimateCharacterCount(background);
+                background.innerText = generateBackground(charCount, this.charList)
+            }, this.refreshInterval);
         }
 
     }
-
-    // console.log(refreshInterval);
 </script>
 
 <style scoped>
