@@ -68,6 +68,36 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </ProjectCard>
             </div>
+            <div style="width: 1ex; height: 1ex; background: red;">
+                <!-- View in Chrome DevTools, or use "Edit as HTML", if in Firefox
+                         .-.            .-.                                                        
+                        /   \          /   \                                                       
+                       |   _ \        / _   |                                                      
+                       ;  | \ \      / / |  ;                                                      
+                        \  \ \ \_.._/ / /  /                                                       
+                         '. '.;'    ';,' .'                                                        
+                           './ _    _ \.'                                                          
+                           .'  a __ a  '.                                                          
+                      '--./ _,   \/   ,_ \.--'                                                     
+                     ----|   \   /\   /   |----                                                    
+                      .--'\   '-'  '-'    /'--.                                                    
+                          _>.__  -- _.-  `;                                                        
+                        .' _     __/     _/                                                        
+                       /    '.,:".-\    /:,                                                        
+                       |      \.'   `""`'.\\                                                       
+                        '-,.__/  _   .-.  ;|_                                                      
+                        /` `|| _/ `\/_  \_|| `\                                                    
+                       |    ||/ \-./` \ / ||   |                                                   
+                        \   ||__/__|___|__||  /                                                    
+                         \_ |_Happy Easter_| /                                                     
+                    jgs .'  \ =  _= _ = _= /`\                                                     
+                       /     `-;----=--;--'   \                                                    
+                       \    _.-'        '.    /                                                    
+                        `""`              `""`                                                     
+                                                                                                   
+                    Credit: Joan G. Stark (Spunk), https://www.asciiart.eu/art/784fca43f16ab5aa
+                -->
+             </div> 
         </ContentLimiter>
     </AppSection>
 </template>
