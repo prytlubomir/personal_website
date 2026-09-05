@@ -1,5 +1,5 @@
 <template>
-    <section class="section">
+    <section class="section" ref="section">
         <slot></slot>
     </section>
 </template>
@@ -7,6 +7,14 @@
 <script>
     export default {
         name: "AppSection",
+        props: {
+            fullScreen: Boolean,
+        },
+        mounted() {
+            if (this.fullScreen) {
+                this.$refs.section.classList.add('full-screen');
+            }
+        }
     }
 </script>
 
@@ -16,11 +24,13 @@
         padding: 1.2rem 0;
         background-color: #1a1a1a;
         color: #afafaf;
-        /*line-height: 1.7em;*/
         font-size: 1.2em;
         word-spacing: .2em;
 
-        /*box-shadow: inset -10px 10px 20px #3f3f3f;*/
+    }
+
+    .full-screen {
+        min-height: 100vh;
     }
 
 </style>
