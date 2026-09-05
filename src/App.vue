@@ -2,7 +2,7 @@
     <AppHeader />
     <main ref="main">
         <TitleScreen />
-        <HomeAboutSection />
+        <HomeAboutSection fullScreen/>
         <ProjectsSection />
         <ContactSection />
     </main>
