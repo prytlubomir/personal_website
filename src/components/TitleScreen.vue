@@ -1,14 +1,14 @@
 <template>
     <section class="title">
         <ContentLimiter class="container">
-            <h1>Hi, I'm Pryt Liubomyr</h1>
+            <h1><span>Hi, I'm</span> <span><span>Liubo&shy;myr</span> <span>Pryt</span></span></h1>
             <div class="intro">
                 <p>I'm a programmer, passionate about developing usefull software!</p>
-                <p class="calling"><span>Look at my projects</span> <span>or</span> <span>hire me!</span></p>
+                <p class="calling"><span>Look at my CV</span> <span>or</span> <span>contact me!</span></p>
             </div>
             <div class="buttons">
-                <LinkButton class="button" href="#">GitHub</LinkButton>
                 <LinkButton class="button" href="#">CV</LinkButton>
+                <LinkButton class="button" href="#">Email</LinkButton>
             </div>
         </ContentLimiter>
         <ShellBackground />
@@ -54,10 +54,14 @@
         margin-bottom: 2.5em;
     }
 
-    .title h1 {
+    h1 {
         font-size: 2.8rem;
         text-align: center;
         margin: 0 0 .1em 0;
+    }
+
+    h1 span {
+        display: inline-block;
     }
 
     .buttons {
@@ -83,4 +87,29 @@
             transparent 100%
         );
     }
+
+    @media screen and (max-width: 600px) {
+        .buttons {
+            gap: 2em 1em;
+        }
+    }
+    
+    @media screen and (max-width: 530px) {
+        .button {
+            flex-basis: 90%;
+        }
+    }
+
+    @media screen and (max-width: 470px) {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    
+    @media screen and (max-width: 300px) {
+        .button {
+            flex-basis: 100%;
+        }
+    }
+    
 </style>

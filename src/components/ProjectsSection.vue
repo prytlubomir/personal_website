@@ -1,6 +1,6 @@
 <template>
     <AppSection class="projects" id="projects">
-        <ContentLimiter>
+        <ContentLimiter class="content-limiter">
             <SectionHeading>My projects</SectionHeading>
             <div class="project-cards">
                 <ProjectCard src="/logov5.svg" projectName="Personal website" imgType="icon">
@@ -119,7 +119,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 
 .project-cards {
     --card-width: 16.5rem;
@@ -127,8 +127,12 @@
     gap: 3rem;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 16.5rem);
-    /*flex-wrap: wrap;*/
-    /*flex-direction: row;*/
+}
+
+@media screen and (max-width: 1160px) {
+    .container{
+        padding: 0 1em;
+    }
 }
 
 </style>

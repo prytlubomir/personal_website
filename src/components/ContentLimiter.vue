@@ -12,6 +12,12 @@
         padding: 0 7em;
     }
 
+    @media screen and (max-width: 790px) {
+        .container{
+            padding: 0 1em;
+        }
+    }
+
 </style>
 
 <script>
