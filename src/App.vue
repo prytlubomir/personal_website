@@ -30,6 +30,7 @@
 <style>
     * {
         box-sizing: border-box;
+        font-family: "Times New Roman"
     }
 
     html {
