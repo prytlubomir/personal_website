@@ -4,7 +4,6 @@
         <TitleScreen />
         <HomeAboutSection fullScreen/>
         <ProjectsSection />
-        <ContactSection />
     </main>
     <AppFooter />
 </template>
@@ -13,7 +12,6 @@
     import AppHeader from './components/AppHeader.vue';
     import TitleScreen from './components/TitleScreen.vue';
     import HomeAboutSection from './components/HomeAboutSection.vue';
-    import ContactSection from './components/ContactSecion.vue';
     import ProjectsSection from './components/ProjectsSection.vue';
     import AppFooter from './components/AppFooter.vue';
 
@@ -23,7 +21,6 @@
             AppHeader,
             TitleScreen,
             HomeAboutSection,
-            ContactSection,
             ProjectsSection,
             AppFooter
         },
