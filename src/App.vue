@@ -3,7 +3,7 @@
     <main ref="main">
         <TitleScreen />
         <HomeAboutSection fullScreen/>
-        <ProjectsSection />
+        <ProjectsSection fullScreen/>
     </main>
     <AppFooter />
 </template>

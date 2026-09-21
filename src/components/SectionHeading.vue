@@ -17,6 +17,7 @@
 
     h2 {
         margin: 0;
+        /*margin-top: 1.2rem;*/
         text-align: center;
         font-weight: normal;
     }

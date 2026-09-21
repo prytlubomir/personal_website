@@ -1,0 +1,247 @@
+[
+    {
+        "name": "Personal website",
+        "img": "/logov5.svg",
+        "type": "icon",
+        "href": "",
+        "text": "My website made with Vue.js v3. You're using it right now."
+    },
+    {
+        "name": "Crop Studio",
+        "img": "/icon.svg",
+        "type": "icon",
+        "href": "https://github.com",
+        "text": "A convenient batch-cropping tool for images."
+    },
+    {
+        "name": "Lorem ipsum",
+        "img": "/poster.png",
+        "type": "",
+        "href": "",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+        "name": "Lorem ipsum",
+        "img": "/gui.png",
+        "type": "",
+        "href": "",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+        "name": "Lorem ipsum",
+        "img": "/tui.png",
+        "type": "",
+        "href": "",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+        "name": "Atlas Notes",
+        "img": "https://picsum.photos/seed/personal-portfolio-1/900/1200",
+        "type": "",
+        "href": "",
+        "text": "A calm knowledge base for research-heavy teams."
+    },
+    {
+        "name": "Pulseboard",
+        "img": "https://picsum.photos/seed/personal-portfolio-2/900/700",
+        "type": "",
+        "href": "https://github.com",
+        "text": "A real-time observability dashboard for small services."
+    },
+    {
+        "name": "Parcel Pilot",
+        "img": "https://picsum.photos/seed/personal-portfolio-3/900/900",
+        "type": "",
+        "href": "",
+        "text": "A lightweight delivery tracking experience for local shops."
+    },
+    {
+        "name": "Lumen Finance",
+        "img": "https://picsum.photos/seed/personal-portfolio-4/900/1200",
+        "type": "",
+        "href": "",
+        "text": "A personal finance planner focused on clear weekly habits."
+    },
+    {
+        "name": "Garden Grid",
+        "img": "https://cdn.simpleicons.org/notion/ffffff",
+        "type": "icon",
+        "href": "",
+        "text": "A visual planning tool for community gardens and allotments."
+    },
+    {
+        "name": "Orbit CRM",
+        "img": "https://picsum.photos/seed/personal-portfolio-6/900/900",
+        "type": "",
+        "href": "https://github.com",
+        "text": "A compact relationship manager for independent consultants."
+    },
+    {
+        "name": "Signal Room",
+        "img": "https://picsum.photos/seed/personal-portfolio-7/900/1200",
+        "type": "",
+        "href": "",
+        "text": "A collaborative incident room for distributed engineering teams."
+    },
+    {
+        "name": "Morrow Journal",
+        "img": "https://picsum.photos/seed/personal-portfolio-8/900/700",
+        "type": "",
+        "href": "",
+        "text": "A private journaling space with gentle daily prompts."
+    },
+    {
+        "name": "Cinder Tasks",
+        "img": "https://picsum.photos/seed/personal-portfolio-9/900/900",
+        "type": "",
+        "href": "https://github.com",
+        "text": "A fast command-driven task manager for terminal lovers."
+    },
+    {
+        "name": "Northstar Maps",
+        "img": "https://picsum.photos/seed/personal-portfolio-10/900/1200",
+        "type": "",
+        "href": "",
+        "text": "A route-planning concept for long-distance hikers."
+    },
+    {
+        "name": "Canvas Kit",
+        "img": "https://picsum.photos/seed/personal-portfolio-11/900/700",
+        "type": "",
+        "href": "",
+        "text": "A shared moodboard for product and brand exploration."
+    },
+    {
+        "name": "Quiet Hours",
+        "img": "https://cdn.simpleicons.org/leaflet/ffffff",
+        "type": "icon",
+        "href": "",
+        "text": "A focus timer that makes interruptions visible."
+    },
+    {
+        "name": "Field Notes",
+        "img": "https://picsum.photos/seed/personal-portfolio-13/900/1200",
+        "type": "",
+        "href": "",
+        "text": "An offline-first inspection checklist for field workers."
+    },
+    {
+        "name": "Metric Garden",
+        "img": "https://picsum.photos/seed/personal-portfolio-14/900/700",
+        "type": "",
+        "href": "",
+        "text": "A playful analytics view for growing products."
+    },
+    {
+        "name": "Relay Inbox",
+        "img": "https://picsum.photos/seed/personal-portfolio-15/900/900",
+        "type": "",
+        "href": "https://github.com",
+        "text": "A unified inbox concept for support and community messages."
+    },
+    {
+        "name": "Tidepool",
+        "img": "https://picsum.photos/seed/personal-portfolio-16/900/1200",
+        "type": "",
+        "href": "",
+        "text": "A marine observation log for citizen scientists."
+    },
+    {
+        "name": "Studio Queue",
+        "img": "https://picsum.photos/seed/personal-portfolio-17/900/700",
+        "type": "",
+        "href": "",
+        "text": "A booking and queue manager for creative studios."
+    },
+    {
+        "name": "Ember Deploy",
+        "img": "https://picsum.photos/seed/personal-portfolio-18/900/900",
+        "type": "",
+        "href": "https://github.com",
+        "text": "A friendly release dashboard for small development teams."
+    },
+    {
+        "name": "Common Room",
+        "img": "https://cdn.simpleicons.org/nextdotjs/ffffff",
+        "type": "icon",
+        "href": "",
+        "text": "A digital noticeboard for apartment communities."
+    },
+    {
+        "name": "Verdant",
+        "img": "https://picsum.photos/seed/personal-portfolio-20/900/700",
+        "type": "",
+        "href": "",
+        "text": "A plant-care companion with seasonal reminders."
+    },
+    {
+        "name": "Afterimage",
+        "img": "https://picsum.photos/seed/personal-portfolio-21/900/900",
+        "type": "",
+        "href": "",
+        "text": "A gallery experience for generative artwork."
+    },
+    {
+        "name": "Ledger Lane",
+        "img": "https://picsum.photos/seed/personal-portfolio-22/900/1200",
+        "type": "",
+        "href": "https://github.com",
+        "text": "A simple invoicing workspace for freelancers."
+    },
+    {
+        "name": "Beacon",
+        "img": "https://picsum.photos/seed/personal-portfolio-23/900/700",
+        "type": "",
+        "href": "",
+        "text": "A neighborhood safety broadcast concept."
+    },
+    {
+        "name": "Loam",
+        "img": "https://picsum.photos/seed/personal-portfolio-24/900/900",
+        "type": "",
+        "href": "",
+        "text": "A recipe and pantry planner built around ingredients."
+    },
+    {
+        "name": "Daybreak",
+        "img": "https://picsum.photos/seed/personal-portfolio-25/900/1200",
+        "type": "",
+        "href": "",
+        "text": "A lightweight morning routine companion."
+    },
+    {
+        "name": "Fathom",
+        "img": "https://cdn.simpleicons.org/github/ffffff",
+        "type": "icon",
+        "href": "",
+        "text": "A dashboard for exploring public datasets."
+    },
+    {
+        "name": "Kiteboard",
+        "img": "https://picsum.photos/seed/personal-portfolio-27/900/900",
+        "type": "",
+        "href": "",
+        "text": "A project planning canvas for ambitious side projects."
+    },
+    {
+        "name": "Echo Park",
+        "img": "https://picsum.photos/seed/personal-portfolio-28/900/1200",
+        "type": "",
+        "href": "https://github.com",
+        "text": "A local events discovery concept for independent venues."
+    },
+    {
+        "name": "Sonder",
+        "img": "https://picsum.photos/seed/personal-portfolio-29/900/700",
+        "type": "",
+        "href": "",
+        "text": "A travel diary combining maps, notes, and photographs."
+    },
+    {
+        "name": "Foundry",
+        "img": "https://picsum.photos/seed/personal-portfolio-30/900/900",
+        "type": "",
+        "href": "",
+        "text": "A component catalogue for a fictional design system."
+    }
+]

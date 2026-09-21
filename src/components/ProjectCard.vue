@@ -19,6 +19,20 @@
     </div>
 
 </template>
+
+<style>
+    :root {
+        /* card size */
+        
+        --project-card-height: 17rem;
+        --project-card-width: 15rem;
+        --project-card-expand-margin: .2rem;
+        /* old values */
+        /*--project-card-height: 19rem;
+        --project-card-width: 17.5rem;*/
+    }
+</style>
+
 <style scoped>
 
     h4, p {
@@ -26,13 +40,33 @@
     }
     
     .project-card {
+
+        /* colors */
+        
         --base-color: #222533;
         --lighter-color: var(--base-color);
         --darker-color: rgb(from var(--lighter-color) calc(r - 16) calc(g - 16) calc(b - 16));
         --lighter-background: var(--lighter-color);
         --darker-background: rgb(from var(--lighter-background) calc(r - 16) calc(g - 16) calc(b - 16));
+
+        /* element size */
+
+        --image-height: 7rem;
+        --body-height: 7rem;
+        --interactive-height: 3rem;
+        /* old values */
+        /*--image-height: 8rem;
+        --body-height: 8rem;
+        --interactive-height: 3rem;*/
+
+        /* animation */
+
+        --resize-duration: .1s;
+        --resize-duration-reverse: .7s;
+        --expand-value: var(--project-card-expand-margin);
+        
         position: relative;
-        height: 19rem;
+        height: var(--project-card-height);
         background-color: var(--lighter-background);
         font-size: 18px;
         border-radius: 1.5rem;
@@ -40,9 +74,6 @@
     }
 
     .card-content {
-        --resize-duration: .1s;
-        --resize-duration-reverse: .7s;
-        --expand-value: .2rem;
         position: relative;
         width: 100%;
         height: 100%;
@@ -62,7 +93,7 @@
         height: calc(100% + calc(var(--expand-value) * 2));
         margin-left: calc(-1 * var(--expand-value));
         margin-top: calc(-1 * var(--expand-value));
-        box-shadow: 0 0 5px 7px var(--darker-color);
+        box-shadow: 0 0 15px .5rem var(--darker-color);
         transition: all var(--resize-duration);
     }
 
@@ -71,7 +102,7 @@
     }
 
     .card-content:hover > .card-image {
-        height: calc(8rem + var(--expand-value) * 2);
+        height: calc(var(--image-height) + var(--expand-value) * 2);
         transition: all var(--resize-duration);
     }
     
@@ -81,7 +112,7 @@
 
     .card-image{
         width: 100%;
-        height: 8rem;
+        height: var(--image-height);
         transition: all var(--resize-duration-reverse);
     }
     
@@ -99,7 +130,7 @@
     }
 
     .card-body{
-        height: 8rem;
+        height: var(--body-height);
         padding: 1rem;
         padding-bottom: 0.5rem;
     }
@@ -111,7 +142,7 @@
     .card-link{
         position: relative;
         top: 0;
-        height: 3rem;
+        height: var(--interactive-height);
         padding: 1rem;
         padding-top: .75rem;
         background: #000;
@@ -185,6 +216,9 @@
                     image.classList.add('icon');
                     break
                 case "image":
+                    image.classList.add('image');
+                    break
+                default:
                     image.classList.add('image');
                     break
             }

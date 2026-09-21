@@ -25,9 +25,14 @@
         text-align: center;
     }
 
-    .text-button:hover {
+    .text-button:hover:enabled {
         color: white !important;
+        cursor: pointer;
         /*text-decoration: underline;*/
+    }
+
+    .text-button:disabled {
+        color: gray !important;
     }
 
 </style>
