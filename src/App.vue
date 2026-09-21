@@ -6,6 +6,7 @@
         <ProjectsSection />
         <ContactSection />
     </main>
+    <AppFooter />
 </template>
 
 <script>
@@ -14,6 +15,7 @@
     import HomeAboutSection from './components/HomeAboutSection.vue';
     import ContactSection from './components/ContactSecion.vue';
     import ProjectsSection from './components/ProjectsSection.vue';
+    import AppFooter from './components/AppFooter.vue';
 
     export default {
         name: 'App',
@@ -22,7 +24,8 @@
             TitleScreen,
             HomeAboutSection,
             ContactSection,
-            ProjectsSection
+            ProjectsSection,
+            AppFooter
         },
     }
 </script>
