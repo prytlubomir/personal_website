@@ -4,11 +4,11 @@
             <h1><span>Hi, I'm</span> <span><span>Liubo&shy;myr</span> <span>Pryt</span></span></h1>
             <div class="intro">
                 <p>I'm a programmer, passionate about developing usefull software!</p>
-                <p class="calling"><span>Look at my CV</span> <span>or</span> <span>contact me!</span></p>
+                <p class="calling"><span>Contact me</span> <span>or</span> <span>look at my CV!</span></p>
             </div>
             <div class="buttons">
+                <LinkButton class="button" href="mailto:lubomyrpryt@gmail.com">Email</LinkButton>
                 <LinkButton class="button" href="#">CV</LinkButton>
-                <LinkButton class="button" href="#">Email</LinkButton>
             </div>
         </ContentLimiter>
         <ShellBackground />
