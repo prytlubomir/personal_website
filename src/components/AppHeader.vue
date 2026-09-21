@@ -4,10 +4,10 @@
         <ContentLimiter>
             <nav>
                 <ul>
-                    <li><a href="" class="nav-title"><img src="/logov5.svg" alt="Pryt Liubomyr"></a></li>
-                    <li><a href="#about" class="nav-about">About</a></li>
-                    <li><a href="#projects" class="nav-about">Projects</a></li>
-                    <li><a href="#contacts" class="nav-contacts">Contacts</a></li>
+                    <li><MinLink href="" class="nav-title"><img src="/logov5.svg" alt="Pryt Liubomyr"></MinLink></li>
+                    <li><MinLink href="#about" class="nav-about">About</MinLink></li>
+                    <li><MinLink href="#projects" class="nav-about">Projects</MinLink></li>
+                    <li><MinLink href="#contacts" class="nav-contacts">Contacts</MinLink></li>
                 </ul>
                 <div class="lang">EN</div>
             </nav>
@@ -17,11 +17,13 @@
 
 <script>
     import ContentLimiter from './ContentLimiter.vue';
+    import MinLink from './MinLink.vue';
 
     export default {
         name: 'AppHeader',
         components: {
-            ContentLimiter
+            ContentLimiter,
+            MinLink,
         },
         mounted() {
             const header = this.$refs.header;
@@ -78,7 +80,7 @@
         gap: 2em;
     }
 
-    .header a {
+    /*.header a {
         text-decoration: none;
         color: #aaaaaa;
     }
@@ -86,7 +88,7 @@
     .header a:hover {
         text-decoration: underline;
         color: #f8f8f8;
-    }
+    }*/
 
     .header .nav-title {
         color: #aaaaff;
