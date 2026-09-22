@@ -1,8 +1,8 @@
 <template>
-    <TextButton class="show-button" v-bind:="$attrs" ref="showButton">
+    <TextButton class="show-button" v-bind:="$attrs" ref="showButton" :disabled="isDisabled">
         <span class="glyph" rel="icon">{{ glyph }}</span> 
         <slot></slot>
-        <span class="card-count" ref="showCount">({{ cardCount }})</span>
+        <span class="card-count" ref="showCount">({{ currentEstimate }})</span>
     </TextButton>
 </template>
 <script>
@@ -18,24 +18,37 @@
             glyph: {
                 type: String,
                 default: "+"
+            },
+            estimate: {
+                type: Number, 
+                default: 0
+            },
+            hideEstimate: Boolean,
+        },
+        methods: {
+            updateEstimate(newEstimate) {
+                this.currentEstimate = newEstimate;
             }
         },
         data() {
             return {
-                cardCount: this.cardsToShow
+                currentEstimate: this.estimate,
+                isDisabled: this.$props.disabled,
             }
         },
         watch: {
-            cardCount(n) {
+            currentEstimate(n) {
                 if (n == 0) {
-                    this.$refs.showCount.classList.add('zero');
+                    this.isDisabled = true;
                 } else {
-                    this.$refs.showCount.classList.remove('zero');
+                    this.isDisabled = false;
                 }
-            }
+            },
         },
         mounted() {
-            document.addEventListener("updateCount", this.toggleVisibility);
+            if (this.hideEstimate) {
+                this.$refs.showCount.classList.add('hidden');
+            }
         }
     }
 </script>
@@ -63,7 +76,7 @@
         color: var(--darker-color);
     }
 
-    .zero {
+    .hidden {
         display: none;
     }
 

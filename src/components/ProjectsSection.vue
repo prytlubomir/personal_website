@@ -16,10 +16,10 @@
                     <nav class="controls">
                         <div class="show">
                             <ShowMoreButton @click="showCardRows++" class="show-button sh-b-more" ref="showMore"> Show more </ShowMoreButton>
-                            <ShowMoreButton @click="showAll()" class="show-button sh-b-all" ref="showAll"> Show all </ShowMoreButton>
+                            <ShowMoreButton :estimate="projects.length" @click="showAll()" class="show-button sh-b-all" ref="showAll"> Show all </ShowMoreButton>
                         </div>
                         <div class="hide">
-                            <ShowMoreButton @click="showCardRows = defaultShowCardRows" class="show-button sh-h-extra" ref="hideExtra" glyph="–">Hide extra</ShowMoreButton>
+                            <ShowMoreButton @click="showCardRows = defaultShowCardRows" class="show-button sh-h-extra" ref="hideExtra" glyph="–" hideEstimate>Hide extra</ShowMoreButton>
                         </div>
                     </nav>
                 </ContentLimiter>
@@ -97,6 +97,8 @@
             showCards(rows=this.showCardRows) {
                 let cards = this.$refs.projectCards.children
                 let rowLength = this.cardsPerRow();
+
+                this.$refs.showMore.updateEstimate(rowLength);
                 
                 let cardsToShow = rows * rowLength;
                 for (let i = 0; i < cards.length; i++) {
@@ -108,22 +110,14 @@
                 }
             },
             showAll() {
+                // this.$refs.showMore.updateEstimate(0);
+                
                 let cards = this.$refs.projectCards.children;
                 let totalRows = cards.length / this.cardsPerRow();
                 this.showCardRows = totalRows;
             }
         },
-        watch: {
-            showCardRows() {
-                this.showCards();
-            }
-        },
         mounted() {
-            this.$refs.showMore.cardCount = 0;
-            this.$refs.showAll.cardCount = 0;
-            // this.$refs.showMore.cardCount = 4;
-            // this.$refs.showAll.cardCount = projects.length;
-            this.$refs.hideExtra.cardCount = 0;
             
             this.cardLayoutStyles = getComputedStyle(this.$refs.projectCards);
             
@@ -132,14 +126,38 @@
             this.cardW = this.remToPx(this.cardW);
 
             this.showCards();
+            this.$refs.showMore.updateEstimate(this.cardsPerRow());
 
             window.onresize = () => {
                 this.showCards();
+                // this.projects.push(
+                //     {
+                //         "name": "Personal website",
+                //         "img": "/logov5.svg",
+                //         "type": "icon",
+                //         "href": "",
+                //         "text": "My website made with Vue.js v3. You're using it right now."
+                //     },
+                // );
+                // console.log(projects.length)
             }
 
         },
+        watch: {
+            showCardRows() {
+                this.showCards();
+            },
+            'projects.length'() {
+                console.log('projects modified');
+                this.$refs.showAll.updateEstimate(projects.length);
+            }
+        },
         data() {
-            return { projects, defaultShowCardRows, showCardRows: defaultShowCardRows, };
+            return {
+                projects,
+                defaultShowCardRows,
+                showCardRows: defaultShowCardRows,
+            };
         }
     }
 </script>
