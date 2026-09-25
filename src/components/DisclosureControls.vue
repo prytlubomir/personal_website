@@ -3,14 +3,14 @@
         <ContentLimiter class="content-limiter">
             <nav class="controls">
                 <div class="show">
-                    <ShowMoreButton @click="$emit('show-more')" class="show-button sh-b-more" ref="showMore"> Show more
+                    <ShowMoreButton :estimate="currentGragual" @click="$emit('show-more')" class="show-button sh-b-more" ref="showMore"> Show more
                     </ShowMoreButton>
                     <ShowMoreButton :estimate="currentTotal" @click="$emit('show-all')" class="show-button sh-b-all"
                         ref="showAll"> Show all </ShowMoreButton>
                 </div>
                 <div class="hide">
-                    <ShowMoreButton @click="$emit('hide-all')" class="show-button sh-h-extra"
-                        ref="hideExtra" glyph="–" hideEstimate>Hide extra</ShowMoreButton>
+                    <ShowMoreButton @click="$emit('hide-all')" class="show-button sh-h-extra" ref="hideExtra" glyph="–"
+                        hideEstimate>Hide extra</ShowMoreButton>
                 </div>
             </nav>
         </ContentLimiter>
@@ -30,18 +30,36 @@
             ContentLimiter
         },
         props: {
-            total: {
+            totalEstimate: {
                 type: Number,
                 default: 0
-            }
+            },
+            gradualEstimate: {
+                type: Number,
+                default: 0
+            },
         },
         data() {
-            return {currentTotal: this.total}
+            return {
+                currentTotal: this.totalEstimate,
+                currentGragual: this.gradualEstimate,
+            }
+        },
+        watch: {
+            currentTotal() {
+                this.$refs.showMore.updateEstimate(this.currentTotal);
+            },
+            currentGragual() {
+                this.$refs.showAll.updateEstimate(this.currentGragual);
+            }
         },
         methods: {
             updateTotal(newTotal) {
                 this.currentTotal = newTotal;
-            }
+            },
+            updateGradual(newGradual) {
+                this.currentGragual = newGradual;
+            },
         }
     }
 </script>
