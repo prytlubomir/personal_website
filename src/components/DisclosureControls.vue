@@ -47,10 +47,10 @@
         },
         watch: {
             currentTotal() {
-                this.$refs.showMore.updateEstimate(this.currentTotal);
+                this.$refs.showAll.updateEstimate(this.currentTotal);
             },
             currentGragual() {
-                this.$refs.showAll.updateEstimate(this.currentGragual);
+                this.$refs.showMore.updateEstimate(this.currentGragual);
             }
         },
         methods: {
