@@ -6,25 +6,30 @@
             </ContentLimiter>
             <ContentLimiter class="content-limiter project-cards">
                 <div class="project-layout" ref="projectCards">
-                    <ProjectCard v-for="project in projects" class="project-card hidden" :key="project.name" :src="project.img" :projectName="project.name" :imgType="project.type" :href="project.href">
-                      {{ project.text }}
+                    <ProjectCard v-for="project in projects" class="project-card hidden" :key="project.name"
+                        :src="project.img" :projectName="project.name" :imgType="project.type" :href="project.href">
+                        {{ project.text }}
                     </ProjectCard>
                 </div>
             </ContentLimiter>
-            <div class="content-controls">
+            <!-- <div class="content-controls">
                 <ContentLimiter class="content-limiter">
                     <nav class="controls">
                         <div class="show">
-                            <ShowMoreButton @click="showCardRows++" class="show-button sh-b-more" ref="showMore"> Show more </ShowMoreButton>
-                            <ShowMoreButton :estimate="projects.length" @click="showAll()" class="show-button sh-b-all" ref="showAll"> Show all </ShowMoreButton>
+                            <ShowMoreButton @click="showCardRows++" class="show-button sh-b-more" ref="showMore"> Show
+                                more </ShowMoreButton>
+                            <ShowMoreButton :estimate="projects.length" @click="showAll()" class="show-button sh-b-all"
+                                ref="showAll"> Show all </ShowMoreButton>
                         </div>
                         <div class="hide">
-                            <ShowMoreButton @click="showCardRows = defaultShowCardRows" class="show-button sh-h-extra" ref="hideExtra" glyph="–" hideEstimate>Hide extra</ShowMoreButton>
+                            <ShowMoreButton @click="showCardRows = defaultShowCardRows" class="show-button sh-h-extra"
+                                ref="hideExtra" glyph="–" hideEstimate>Hide extra</ShowMoreButton>
                         </div>
                     </nav>
                 </ContentLimiter>
                 <div class="background"></div>
-            </div>
+            </div> -->
+            <DisclosureControls :totalEstimate="projects.length" @show-more="showCardRows++" @show-all="showAll()" @hide-all="showCardRows = defaultShowCardRows" ref="disclosureControls" />
         </div>
         <div style="width: 1ex; height: 1ex; background: red;">
             <!-- View in Chrome DevTools, or use "Edit as HTML", if in Firefox
@@ -62,18 +67,19 @@
 <script>
     import AppSection from './AppSection.vue';
     import ContentLimiter from './ContentLimiter.vue';
+    import DisclosureControls from './DisclosureControls.vue';
     import ProjectCard from './ProjectCard.vue';
     import SectionHeading from './SectionHeading.vue';
-    import ShowMoreButton from './ShowMoreButton.vue';
+    // import ShowMoreButton from './ShowMoreButton.vue';
 
 
     const defaultShowCardRows = 2;
-    
+
     const response = await fetch("/mockProjects.json");
     const result = await response.json();
     const projects = result.sort(() => Math.random() - 0.5);
-    
-    
+
+
     export default {
         name: "ProjectSection",
         components: {
@@ -81,7 +87,8 @@
             SectionHeading,
             ContentLimiter,
             ProjectCard,
-            ShowMoreButton,
+            // ShowMoreButton,
+            DisclosureControls,
         },
         methods: {
             cardsPerRow() {
@@ -94,12 +101,12 @@
                 let fz = parseInt(getComputedStyle(document.documentElement).fontSize);
                 return rem * fz;
             },
-            showCards(rows=this.showCardRows) {
+            showCards(rows = this.showCardRows) {
                 let cards = this.$refs.projectCards.children
                 let rowLength = this.cardsPerRow();
 
-                this.$refs.showMore.updateEstimate(rowLength);
-                
+                this.$refs.disclosureControls.updateGradual(rowLength);
+
                 let cardsToShow = rows * rowLength;
                 for (let i = 0; i < cards.length; i++) {
                     if (i < cardsToShow) {
@@ -111,22 +118,22 @@
             },
             showAll() {
                 // this.$refs.showMore.updateEstimate(0);
-                
+
                 let cards = this.$refs.projectCards.children;
                 let totalRows = cards.length / this.cardsPerRow();
                 this.showCardRows = totalRows;
             }
         },
         mounted() {
-            
+
             this.cardLayoutStyles = getComputedStyle(this.$refs.projectCards);
-            
+
             this.gapW = parseInt(this.cardLayoutStyles.getPropertyValue('gap'));
             this.cardW = parseInt(this.cardLayoutStyles.getPropertyValue('--project-card-width'));
             this.cardW = this.remToPx(this.cardW);
 
             this.showCards();
-            this.$refs.showMore.updateEstimate(this.cardsPerRow());
+            this.$refs.disclosureControls.updateGradual(this.cardsPerRow());
 
             window.onresize = () => {
                 this.showCards();
@@ -149,7 +156,7 @@
             },
             'projects.length'() {
                 console.log('projects modified');
-                this.$refs.showAll.updateEstimate(projects.length);
+                this.$refs.disclosureControls.updateTotal(projects.length);
             }
         },
         data() {
@@ -195,7 +202,7 @@
         inherits: true;
         initial-value: 0;
     }*/
-    
+
     .project-cards {
         --gap: 3rem;
         --row-height: calc(var(--project-card-height) + var(--gap));
@@ -203,10 +210,10 @@
         --view-height: calc(var(--row-height) * var(--show-rows) + 0px);
         /*--layout-width: calc(100vw - calc(var(--content-limiter-padding) * 2));*/
         /*--row-length: round(
-            down, 
+            down,
             calc(
-                calc(var(--layout-width) + var(--gap)) 
-                / 
+                calc(var(--layout-width) + var(--gap))
+                /
                 calc(var(--project-card-width) + var(--gap))
             )
         );*/
@@ -238,11 +245,9 @@
         min-height: var(--project-card-height);*/
     }
 
-    .content-controls {
+    /*.content-controls {
         box-sizing: content-box;
         position: relative;
-        /*height: 1.2rem;*/
-        /*padding: 1rem 0;*/
         margin-top: 1rem;
     }
 
@@ -262,7 +267,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0 3rem;
-    }
+    }*/
 
     /*.content-controls .show-button {
         position: relative;
@@ -282,16 +287,15 @@
         background-color: currentColor;
     }*/
 
-    .content-controls .background {
+    /*.content-controls .background {
         position: absolute;
         width: 100%;
-        /*height: 3.2rem;*/
         height: 100%;
         top: 0;
         left: calc(var(--content-limiter-padding) * -1);
         z-index: 0;
         background-color: #000;
-    }
+    }*/
 
     @media screen and (max-width: 1600px) {
         .project-cards {
