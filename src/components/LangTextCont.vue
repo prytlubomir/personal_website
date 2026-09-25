@@ -33,12 +33,15 @@
                     localizations[0].classList.add('selected');
                 }
             }
+        },
+        mounted() {
+            this.localize();
         }
     }
 </script>
 <style scoped>
 
-    .localization.selected {
+    :deep(.selected) {
         display: inline;
     }
 
