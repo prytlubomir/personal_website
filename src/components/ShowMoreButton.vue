@@ -28,7 +28,13 @@
         methods: {
             updateEstimate(newEstimate) {
                 this.currentEstimate = newEstimate;
-            }
+            },
+            disable() {
+                this.isDisabled = true;
+            },
+            enable() {
+                this.isDisabled = false;
+            },
         },
         data() {
             return {
@@ -39,10 +45,11 @@
         watch: {
             currentEstimate(n) {
                 if (n == 0) {
-                    this.isDisabled = true;
+                    this.disable();
                 } else {
-                    this.isDisabled = false;
+                    this.enable();
                 }
+                console.log('isDisabled: ', this.isDisabled);
             },
         },
         mounted() {
