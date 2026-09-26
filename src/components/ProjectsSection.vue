@@ -12,7 +12,12 @@
                     </ProjectCard>
                 </div>
             </ContentLimiter>
-            <DisclosureControls :totalEstimate="projects.length" @show-more="showMore()" @show-all="showAll()" @hide-all="hideAll()" ref="disclosureControls" />
+            <DisclosureControls 
+                @show-more="showMore()"
+                @show-all="showAll()"
+                @hide-all="hideAll()"
+                ref="disclosureControls" 
+            />
         </div>
         <div style="width: 1ex; height: 1ex; background: red;">
             <!-- View in Chrome DevTools, or use "Edit as HTML", if in Firefox
@@ -53,7 +58,6 @@
     import DisclosureControls from './DisclosureControls.vue';
     import ProjectCard from './ProjectCard.vue';
     import SectionHeading from './SectionHeading.vue';
-    // import ShowMoreButton from './ShowMoreButton.vue';
 
 
     const defaultVisibleRows = 2;
@@ -70,39 +74,45 @@
             SectionHeading,
             ContentLimiter,
             ProjectCard,
-            // ShowMoreButton,
             DisclosureControls,
         },
         methods: {
+            remToPx(rem) {
+                let fz = parseInt(getComputedStyle(document.documentElement).fontSize);
+                return rem * fz;
+            },
             rowLength() {
                 let contW = parseInt(this.cardLayoutStyles.getPropertyValue('width'));
                 let [w, c, g] = [contW, this.cardW, this.gapW];
                 let x = (w + g) / (c + g);
                 return Math.floor(x);
             },
-            remToPx(rem) {
-                let fz = parseInt(getComputedStyle(document.documentElement).fontSize);
-                return rem * fz;
-            },
-            nextRowEstimate() {
+            hiddenCards() {
                 let total = this.projects.length;
                 let rowLength = this.rowLength();
-                let hidden = total - (rowLength * this.visibleRows);
-                
-                if (hidden < 0) {
-                    return 0;
+                let hidden = total - rowLength * this.visibleRows;
+
+                if (hidden <= 0) {
+                    hidden = 0;
                 }
-                if (rowLength > hidden) {
-                    return hidden;
-                }
-                return rowLength;
+                return hidden
             },
-            showCards(rows = this.visibleRows) {
+            nextRowEstimate() {
+                let rowLength = this.rowLength();
+                let hidden = this.hiddenCards();
+
+                if (hidden > rowLength) {
+                    return rowLength;
+                }
+                return hidden;
+            },
+            updateView(rows = this.visibleRows) {
                 let cards = this.$refs.projectCards.children
                 let rowLength = this.rowLength();
 
                 this.$refs.disclosureControls.updateGradual(this.nextRowEstimate());
-
+                this.$refs.disclosureControls.updateTotal(this.hiddenCards());
+                
                 let cardsToShow = rows * rowLength;
                 for (let i = 0; i < cards.length; i++) {
                     if (i < cardsToShow) {
@@ -114,17 +124,30 @@
             },
             showMore() {
                 this.visibleRows++;
-                this.$refs.disclosureControls.updateGradual(this.nextRowEstimate());
             },
             showAll() {
-                // this.$refs.showMore.updateEstimate(0);
-
                 let cards = this.$refs.projectCards.children;
                 let totalRows = cards.length / this.rowLength();
                 this.visibleRows = totalRows;
             },
             hideAll() {
                 this.visibleRows = defaultVisibleRows;
+            }
+        },
+        data() {
+            return {
+                projects,
+                defaultVisibleRows,
+                visibleRows: defaultVisibleRows,
+            };
+        },
+        watch: {
+            visibleRows() {
+                this.updateView();
+            },
+            'projects.length'() {
+                // console.log('projects modified');
+                this.updateView();
             }
         },
         mounted() {
@@ -135,40 +158,23 @@
             this.cardW = parseInt(this.cardLayoutStyles.getPropertyValue('--project-card-width'));
             this.cardW = this.remToPx(this.cardW);
 
-            this.showCards();
-            this.$refs.disclosureControls.updateGradual(this.nextRowEstimate());
+            this.updateView();
 
             window.onresize = () => {
-                this.showCards();
-                // this.projects.push(
-                //     {
-                //         "name": "Personal website",
-                //         "img": "/logov5.svg",
-                //         "type": "icon",
-                //         "href": "",
-                //         "text": "My website made with Vue.js v3. You're using it right now."
-                //     },
-                // );
-                // console.log(projects.length)
+                this.updateView();
+                /*this.projects.push(
+                    {
+                        "name": "Personal website",
+                        "img": "/logov5.svg",
+                        "type": "icon",
+                        "href": "",
+                        "text": "My website made with Vue.js v3. You're using it right now."
+                    },
+                );
+                console.log(projects.length)*/
             }
 
         },
-        watch: {
-            visibleRows() {
-                this.showCards();
-            },
-            'projects.length'() {
-                console.log('projects modified');
-                this.$refs.disclosureControls.updateTotal(projects.length);
-            }
-        },
-        data() {
-            return {
-                projects,
-                defaultVisibleRows,
-                visibleRows: defaultVisibleRows,
-            };
-        }
     }
 </script>
 
