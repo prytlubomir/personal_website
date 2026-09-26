@@ -146,7 +146,6 @@
                 this.updateView();
             },
             'projects.length'() {
-                // console.log('projects modified');
                 this.updateView();
             }
         },
@@ -162,16 +161,6 @@
 
             window.onresize = () => {
                 this.updateView();
-                /*this.projects.push(
-                    {
-                        "name": "Personal website",
-                        "img": "/logov5.svg",
-                        "type": "icon",
-                        "href": "",
-                        "text": "My website made with Vue.js v3. You're using it right now."
-                    },
-                );
-                console.log(projects.length)*/
             }
 
         },
@@ -187,16 +176,6 @@
 
     .projects {
         box-sizing: border-box;
-        /*height: 100vh;*/
-        /*display: flex;*/
-        /*flex-direction: column;*/
-        /*min-height: calc(var(--project-card-height) + var(--gap));*/
-        /*overflow: hidden;*/
-    }
-
-    .content-limiter {
-        /*height: 100%;*/
-        /*overflow: hidden;*/
     }
 
     .projects-layout {
@@ -206,105 +185,21 @@
         gap: 1rem;
     }
 
-    /*@property --row-length {
-        syntax: "<integer>";
-        inherits: true;
-        initial-value: 0;
-    }*/
-
     .project-cards {
         --gap: 3rem;
         --row-height: calc(var(--project-card-height) + var(--gap));
         --show-rows: 2;
         --view-height: calc(var(--row-height) * var(--show-rows) + 0px);
-        /*--layout-width: calc(100vw - calc(var(--content-limiter-padding) * 2));*/
-        /*--row-length: round(
-            down,
-            calc(
-                calc(var(--layout-width) + var(--gap))
-                /
-                calc(var(--project-card-width) + var(--gap))
-            )
-        );*/
-        /*flex-basis: var(--view-height);*/
         min-height: var(--project-card-height);
-        /*overflow: hidden;*/
-        /*padding: 0 0;*/
-        /*max-height: 100%;*/
     }
-
-    /*.project-cards::before {
-        counter-reset: row-length var(--row-length);
-        content: counter(row-length);
-    }
-
-    .project-card:nth-child(1n+var(--row-length)){
-        display: none;
-    }*/
 
     .project-layout {
-        /*box-sizing: content-box;*/
         display: grid;
         gap: var(--gap);
-        /*padding: 3rem 0;*/
         height: 100%;
         justify-content: center;
         grid-template-columns: repeat(auto-fit, var(--project-card-width));
-        /*flex-basis: calc(var(--row-height) * 2);
-        min-height: var(--project-card-height);*/
     }
-
-    /*.content-controls {
-        box-sizing: content-box;
-        position: relative;
-        margin-top: 1rem;
-    }
-
-    .content-controls .controls {
-        position: relative;
-        display: flex;
-        z-index: 1;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .content-controls .show-button {
-        margin: 1rem 0;
-    }
-
-    .content-controls .show {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0 3rem;
-    }*/
-
-    /*.content-controls .show-button {
-        position: relative;
-    }
-
-    .content-controls .show-button::after{
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin-top: 1em;
-        height: 1px;
-        width: inherit;
-    }
-
-    .content-controls .show-button:hover::after{
-        background-color: currentColor;
-    }*/
-
-    /*.content-controls .background {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: calc(var(--content-limiter-padding) * -1);
-        z-index: 0;
-        background-color: #000;
-    }*/
 
     @media screen and (max-width: 1600px) {
         .project-cards {
