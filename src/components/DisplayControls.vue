@@ -23,7 +23,7 @@
 
 
     export default {
-        name: "DisclosureControls",
+        name: "DisplayControls",
         events: ["show-more", "show-all", "hide-all"],
         components: {
             ShowMoreButton,

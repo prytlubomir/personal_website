@@ -12,11 +12,11 @@
                     </ProjectCard>
                 </div>
             </ContentLimiter>
-            <DisclosureControls 
+            <DisplayControls 
                 @show-more="showMore()"
                 @show-all="showAll()"
                 @hide-all="hideAll()"
-                ref="disclosureControls" 
+                ref="displayControls" 
             />
         </div>
         <div style="width: 1ex; height: 1ex; background: red;">
@@ -55,7 +55,7 @@
 <script>
     import AppSection from './AppSection.vue';
     import ContentLimiter from './ContentLimiter.vue';
-    import DisclosureControls from './DisclosureControls.vue';
+    import DisplayControls from './DisplayControls.vue';
     import ProjectCard from './ProjectCard.vue';
     import SectionHeading from './SectionHeading.vue';
 
@@ -74,7 +74,7 @@
             SectionHeading,
             ContentLimiter,
             ProjectCard,
-            DisclosureControls,
+            DisplayControls,
         },
         methods: {
             remToPx(rem) {
@@ -110,8 +110,8 @@
                 let cards = this.$refs.projectCards.children
                 let rowLength = this.rowLength();
 
-                this.$refs.disclosureControls.updateGradual(this.nextRowEstimate());
-                this.$refs.disclosureControls.updateTotal(this.hiddenCards());
+                this.$refs.displayControls.updateGradual(this.nextRowEstimate());
+                this.$refs.displayControls.updateTotal(this.hiddenCards());
                 
                 let cardsToShow = rows * rowLength;
                 for (let i = 0; i < cards.length; i++) {
