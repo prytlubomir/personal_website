@@ -21,7 +21,8 @@
         font-size: 1rem;
         font-weight: normal;
         line-height: 1.2rem;
-        color: #ddd;
+        /*color: #ddd;*/
+        color: #aaaaaa;
         text-align: center;
     }
 

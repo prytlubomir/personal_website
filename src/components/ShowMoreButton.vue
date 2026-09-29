@@ -64,7 +64,7 @@
     .show-button {
         display: flex;
         font-size: 1rem;
-        color: #ddd;
+        /*color: #ddd;*/
         --darker-color: #777777;
         /*gap: 1ex;*/
     }
