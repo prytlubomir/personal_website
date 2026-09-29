@@ -80,16 +80,6 @@
         gap: 2em;
     }
 
-    /*.header a {
-        text-decoration: none;
-        color: #aaaaaa;
-    }
-
-    .header a:hover {
-        text-decoration: underline;
-        color: #f8f8f8;
-    }*/
-
     .header .nav-title {
         color: #aaaaff;
         margin-right: 2em;
