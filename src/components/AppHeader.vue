@@ -35,14 +35,9 @@
             MinLink,
             LangSwitch
         },
-        mounted() {
-            const header = this.$refs.header;
-            const headerBackground = this.$refs.headerBackground;
-            const headerHeight = header.offsetHeight;
-
-            window.addEventListener('scroll', () => {
+        methods: {
+            updateBackground(headerHeight, headerBackground) {
                 let hPos = window.scrollY;
-
 
                 if (hPos > headerHeight && !headerBackground.classList.contains('show')) {
                     console.log('added');
@@ -51,6 +46,16 @@
                     console.log('removed');
                     headerBackground.classList.remove('show');
                 }
+            }
+        },
+        mounted() {
+            const header = this.$refs.header;
+            const headerBackground = this.$refs.headerBackground;
+            const headerHeight = header.offsetHeight;
+
+            this.updateBackground(headerHeight, headerBackground);
+            window.addEventListener('scroll', () => {
+                this.updateBackground(headerHeight, headerBackground);
             });
         },
     }
