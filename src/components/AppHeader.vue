@@ -4,12 +4,20 @@
         <ContentLimiter>
             <nav>
                 <ul>
-                    <li><MinLink href="" class="nav-title"><img src="/logov5.svg" alt="Pryt Liubomyr"></MinLink></li>
-                    <li><MinLink href="#about" class="nav-about">About</MinLink></li>
-                    <li><MinLink href="#projects" class="nav-about">Projects</MinLink></li>
-                    <li><MinLink href="#contacts" class="nav-contacts">Contacts</MinLink></li>
+                    <li>
+                        <MinLink href="" class="nav-title"><img src="/logov5.svg" alt="Pryt Liubomyr"></MinLink>
+                    </li>
+                    <li>
+                        <MinLink href="#about" class="nav-about">About</MinLink>
+                    </li>
+                    <li>
+                        <MinLink href="#projects" class="nav-about">Projects</MinLink>
+                    </li>
+                    <li>
+                        <MinLink href="#contacts" class="nav-contacts">Contacts</MinLink>
+                    </li>
                 </ul>
-                <div class="lang">EN</div>
+                <div class="lang"><LangSwitch>EN</LangSwitch></div>
             </nav>
         </ContentLimiter>
     </header>
@@ -17,6 +25,7 @@
 
 <script>
     import ContentLimiter from './ContentLimiter.vue';
+    import LangSwitch from './LangSwitch.vue';
     import MinLink from './MinLink.vue';
 
     export default {
@@ -24,12 +33,13 @@
         components: {
             ContentLimiter,
             MinLink,
+            LangSwitch
         },
         mounted() {
             const header = this.$refs.header;
             const headerBackground = this.$refs.headerBackground;
             const headerHeight = header.offsetHeight;
-            
+
             window.addEventListener('scroll', () => {
                 let hPos = window.scrollY;
 
@@ -49,11 +59,11 @@
 
 <style>
 
-:root {
-    --header-height: 1.2em;
-    --header-padding: 1em;
-    --header-occupied-space: calc(var(--header-height) + var(--header-padding) * 2)
-}
+    :root {
+        --header-height: 1.2em;
+        --header-padding: 1em;
+        --header-occupied-space: calc(var(--header-height) + var(--header-padding) * 2)
+    }
 
 </style>
 
@@ -103,5 +113,5 @@
     .header-background.show {
         top: 0;
     }
-    
+
 </style>
