@@ -1,6 +1,6 @@
 <template>
     <TextButton class="button" ref="button">
-        <slot></slot>
+        {{ lang }}
     </TextButton>
 </template>
 <script>
@@ -11,11 +11,21 @@
         name: "LangSwitch",
         components: {
             TextButton,
+        },
+        props: {
+            lang: {
+                type: String,
+                default: 'en',
+                get(value) {
+                    return value.toLowerCase();
+                }
+            }
         }
     }
 </script>
 <style scoped>
     .button {
+        text-transform: uppercase;
         color: white;
     }
 </style>

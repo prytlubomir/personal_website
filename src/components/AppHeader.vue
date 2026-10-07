@@ -17,7 +17,7 @@
                         <MinLink href="#contacts" class="nav-contacts">Contacts</MinLink>
                     </li>
                 </ul>
-                <div class="lang"><LangSwitch>EN</LangSwitch></div>
+                <div class="lang"><LangSwitch lang="en"/></div>
             </nav>
         </ContentLimiter>
     </header>
