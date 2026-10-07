@@ -27,13 +27,13 @@
     }
 
     .text-button:hover:enabled {
-        color: white !important;
+        color: white;
         cursor: pointer;
         /*text-decoration: underline;*/
     }
 
     .text-button:disabled {
-        color: gray !important;
+        color: gray;
     }
 
 </style>
