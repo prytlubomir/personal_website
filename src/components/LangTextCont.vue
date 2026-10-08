@@ -1,6 +1,5 @@
 <template>
     <span class="lang-cont" ref="langCont">
-        {{ langState.current }}
         <slot></slot>
     </span>
 </template>
