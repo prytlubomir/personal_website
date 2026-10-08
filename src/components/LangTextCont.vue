@@ -1,19 +1,27 @@
 <template>
     <span class="lang-cont" ref="langCont">
+        {{ langState.current }}
         <slot></slot>
     </span>
 </template>
 <script>
+    import { langState } from './langState.js';
+
     export default {
         name: "LangTextCont",
         props: {
             lang: {
                 type: String,
-                default: 'en'
+                default: langState.current
             }
         },
         data() {
-            return { currentLang: this.lang }
+            return { langState }
+        },
+        watch: {
+            'langState.current'() {
+                this.localize();
+            }
         },
         methods: {
             localize() {
@@ -21,7 +29,7 @@
                 this.selected = false;
                 
                 localizations.forEach((loc) => {
-                    if (loc.getAttribute('lang') == this.currentLang) {
+                    if (loc.getAttribute('lang') == this.langState.current) {
                         this.selected = true;
                         loc.classList.add('selected');
                     } else {
