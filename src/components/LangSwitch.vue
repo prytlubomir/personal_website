@@ -1,5 +1,5 @@
 <template>
-    <TextButton class="button" ref="button" @click="change">
+    <TextButton class="button" ref="button" @click="langState.change()">
         {{ langState.current }}
     </TextButton>
 </template>
@@ -25,21 +25,6 @@
         data() {
             return { langState }
         },
-        methods: {
-            change() {
-                switch (this.langState.current) {
-                    case 'en':
-                        this.langState.current = 'ua';
-                        break;
-                    case 'ua':
-                        this.langState.current = 'en';
-                        break
-                    default:
-                        console.error('langState', this.langState);
-                        break
-                }
-            }
-        }
     }
 </script>
 <style scoped>
