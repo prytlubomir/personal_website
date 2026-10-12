@@ -4,12 +4,12 @@
         <TitleScreen />
         <HomeAboutSection fullScreen/>
         <ProjectsSection fullScreen/>
-        <AppSection fullScreen>
+        <!-- <AppSection fullScreen>
             <LangTextCont>
                 <LangText lang="en">This text is in English</LangText>
                 <LangText lang="ua">Цей текст написано Українською</LangText>
             </LangTextCont>
-        </AppSection>
+        </AppSection> -->
     </main>
     <AppFooter />
 </template>
@@ -20,9 +20,9 @@
     import HomeAboutSection from './components/HomeAboutSection.vue';
     import ProjectsSection from './components/ProjectsSection.vue';
     import AppFooter from './components/AppFooter.vue';
-    import LangText from './components/LangText.vue';
-    import LangTextCont from './components/LangTextCont.vue';
-    import AppSection from './components/AppSection.vue';
+    // import LangText from './components/LangText.vue';
+    // import LangTextCont from './components/LangTextCont.vue';
+    // import AppSection from './components/AppSection.vue';
 
     export default {
         name: 'App',
@@ -32,9 +32,9 @@
             HomeAboutSection,
             ProjectsSection,
             AppFooter,
-            LangText,
-            LangTextCont,
-            AppSection
+            // LangText,
+            // LangTextCont,
+            // AppSection
         },
     }
 </script>
