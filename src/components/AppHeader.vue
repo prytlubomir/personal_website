@@ -17,7 +17,8 @@
                         <MinLink href="#contacts" class="nav-contacts">Contacts</MinLink>
                     </li>
                 </ul>
-                <div class="lang"><LangSwitch/></div>
+                <!-- <div class="lang"><LangSwitch/></div> -->
+                <div title="There's an easter egg!">Hi.</div>
             </nav>
         </ContentLimiter>
     </header>
@@ -25,7 +26,7 @@
 
 <script>
     import ContentLimiter from './ContentLimiter.vue';
-    import LangSwitch from './LangSwitch.vue';
+    // import LangSwitch from './LangSwitch.vue';
     import MinLink from './MinLink.vue';
 
     export default {
@@ -33,7 +34,7 @@
         components: {
             ContentLimiter,
             MinLink,
-            LangSwitch
+            // LangSwitch
         },
         methods: {
             updateBackground(headerHeight, headerBackground) {
